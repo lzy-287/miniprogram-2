@@ -1,0 +1,56 @@
+page {
+    background: #f5f6f7;
+  }
+  
+  .container {
+    padding: 30rpx;
+  }
+  
+  .role-hint {
+    font-size: 28rpx;
+    margin-bottom: 30rpx;
+  }
+  
+  .role {
+    color: #0052d9;
+    font-weight: 600;
+  }
+  
+  .avatar-section {
+    width: 180rpx;
+    height: 180rpx;
+    margin: 0 auto 40rpx;
+    position: relative;
+  }
+  
+  .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #eee;
+  }
+  
+  .avatar-mask {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60rpx;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 22rpx;
+    text-align: center;
+    line-height: 60rpx;
+    border-radius: 0 0 50% 50%;
+  }
+  
+  .form-card {
+    background: #fff;
+    border-radius: 20rpx;
+    padding: 30rpx;
+    margin-bottom: 24rpx;
+  }
+  
+  .submit-section {
+    margin-top: 40rpx;
+  }
+  

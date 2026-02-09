@@ -1,0 +1,30 @@
+<view class="container">
+
+<!-- 标题 -->
+<view class="title-section">
+  <text class="title">欢迎使用</text>
+  <text class="subtitle">请选择您的身份并登录</text>
+</view>
+
+<!-- 身份选择 -->
+<view class="role-section">
+  <t-radio-group value="{{selectedRole}}" bind:change="onRoleChange">
+    <t-radio value="student">学生</t-radio>
+    <t-radio value="alumni">校友</t-radio>
+    <t-radio value="teacher">老师</t-radio>
+  </t-radio-group>
+</view>
+
+<!-- 登录按钮 -->
+<view class="action-section">
+  <t-button
+    theme="primary"
+    size="large"
+    block
+    bindtap="onLoginTap"
+  >
+    登录
+  </t-button>
+</view>
+
+</view>

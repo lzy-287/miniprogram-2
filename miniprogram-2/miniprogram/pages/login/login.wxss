@@ -1,0 +1,35 @@
+page {
+    background-color: #f5f6f7;
+  }
+  
+  .container {
+    padding: 120rpx 40rpx;
+  }
+  
+  .title-section {
+    margin-bottom: 80rpx;
+  }
+  
+  .title {
+    font-size: 44rpx;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 16rpx;
+  }
+  
+  .subtitle {
+    font-size: 28rpx;
+    color: #888;
+  }
+  
+  .role-section {
+    background: #ffffff;
+    border-radius: 20rpx;
+    padding: 40rpx;
+    margin-bottom: 60rpx;
+  }
+  
+  .action-section {
+    margin-top: 20rpx;
+  }
+  

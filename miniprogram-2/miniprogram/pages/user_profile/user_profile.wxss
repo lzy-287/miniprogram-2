@@ -1,0 +1,74 @@
+/* pages/user_profile/user_profile.wxss */
+page {
+    background-color: #f5f6f7;
+  }
+  
+  .container {
+    padding: 40rpx 30rpx 80rpx;
+    box-sizing: border-box;
+  }
+  
+  /* 用户卡片 */
+  .user-card {
+    background: #ffffff;
+    border-radius: 24rpx;
+    padding: 60rpx 40rpx;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 12rpx 32rpx rgba(0, 0, 0, 0.06);
+  }
+  
+  .avatar-container {
+    margin-right: 32rpx;
+  }
+  
+  .user-info {
+    flex: 1;
+  }
+  
+  .username {
+    font-size: 38rpx;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 12rpx;
+  }
+  
+  .role-tag {
+    display: inline-block;
+  }
+  
+  /* 引导说明 */
+  .hint-section {
+    margin-top: 48rpx;
+    padding: 0 20rpx;
+  }
+  
+  .hint-text {
+    font-size: 28rpx;
+    color: #888;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  /* 主按钮 */
+  .action-section {
+    margin-top: 60rpx;
+  }
+  
+  /* 底部 */
+  .footer-section {
+    margin-top: 120rpx;
+    text-align: center;
+  }
+  
+  .footer-item {
+    font-size: 28rpx;
+    color: #0052d9;
+    margin-bottom: 20rpx;
+  }
+  
+  .version-info {
+    font-size: 24rpx;
+    color: #aaa;
+  }
+  
