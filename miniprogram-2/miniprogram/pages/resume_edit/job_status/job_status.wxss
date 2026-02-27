@@ -1,0 +1,52 @@
+page {
+    background: #f4f8ff;
+  }
+  
+  .container {
+    padding: 24rpx;
+    box-sizing: border-box;
+  }
+  
+  /* 标题 */
+  .section-title {
+    font-size: 32rpx;
+    font-weight: 600;
+    margin-bottom: 30rpx;
+    color: #1f3c88;
+  }
+  
+  /* 卡片 */
+  .card {
+    background: #ffffff;
+    padding: 20rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 6rpx 20rpx rgba(0, 80, 255, 0.05);
+  }
+  
+  /* 选项 */
+  .option {
+    padding: 28rpx;
+    border-radius: 16rpx;
+    margin-bottom: 20rpx;
+    background: #f7f9ff;
+    font-size: 28rpx;
+    color: #333;
+    transition: all 0.2s ease;
+  }
+  
+  /* 选中效果 */
+  .option.active {
+    background: #4a6cf7;
+    color: #ffffff;
+  }
+  
+  /* 保存按钮 */
+  .save-btn {
+    width: 100%;
+    height: 80rpx;
+    margin-top: 60rpx;
+    background: #4a6cf7;
+    color: #ffffff;
+    font-size: 28rpx;
+    border-radius: 40rpx;
+  }

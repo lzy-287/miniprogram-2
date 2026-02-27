@@ -26,7 +26,7 @@ Page({
           // 调用云函数：判断是否已注册
           wx.cloud.callFunction({
             name: 'login',
-            data: { role },
+            data: { role, code: res.code }, // 确保云函数用 code 换 openid
             success: cloudRes => {
               wx.hideLoading();
   
@@ -43,6 +43,7 @@ Page({
               // 已注册 → 登录成功
               const userInfo = result.userInfo;
   
+              wx.setStorageSync('openid', result.openid);
               wx.setStorageSync('userInfo', userInfo);
               wx.setStorageSync('userType', userInfo.role);
   
@@ -59,17 +60,9 @@ Page({
     },
   
     redirectByRole(role) {
-      let url = '';
-  
-      if (role === 'student') {
-        url = '/pages/profile/student_profile/student_profile';
-      } else if (role === 'alumni') {
-        url = '/pages/profile/alumni_profile/alumni_profile';
-      } else if (role === 'teacher') {
-        url = '/pages/profile/teacher_profile/teacher_profile';
+        wx.switchTab({
+          url: '/pages/user_profile/user_profile'
+        });
       }
-  
-      wx.redirectTo({ url });
-    }
   });
   

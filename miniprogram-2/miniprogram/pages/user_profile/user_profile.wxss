@@ -1,74 +1,100 @@
-/* pages/user_profile/user_profile.wxss */
-page {
-    background-color: #f5f6f7;
+.container {
+    padding: 40rpx;
   }
   
-  .container {
-    padding: 40rpx 30rpx 80rpx;
-    box-sizing: border-box;
-  }
-  
-  /* 用户卡片 */
-  .user-card {
+  .login-card,
+  .profile-card {
     background: #ffffff;
-    border-radius: 24rpx;
+    border-radius: 30rpx;
     padding: 60rpx 40rpx;
+    box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  }
+  
+  /* 头像 + 姓名 + 身份容器 */
+  .header {
     display: flex;
-    align-items: center;
-    box-shadow: 0 12rpx 32rpx rgba(0, 0, 0, 0.06);
+    align-items: center;   /* 垂直居中 */
+    gap: 30rpx;            /* 头像和信息间距 */
+    margin-bottom: 40rpx;
   }
   
-  .avatar-container {
-    margin-right: 32rpx;
+  .avatar {
+    width: 140rpx;
+    height: 140rpx;
+    border-radius: 50%;
+    border: 4rpx solid #e6f0ff;
   }
   
-  .user-info {
-    flex: 1;
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10rpx; /* 姓名和身份间距 */
   }
   
-  .username {
+  .name {
     font-size: 38rpx;
-    font-weight: 600;
-    color: #222;
-    margin-bottom: 12rpx;
+    font-weight: bold;
+    color: #003a8c;
   }
   
-  .role-tag {
-    display: inline-block;
+    /* 数字样式 */
+  .stat {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 32rpx;
   }
   
-  /* 引导说明 */
-  .hint-section {
-    margin-top: 48rpx;
-    padding: 0 20rpx;
-  }
-  
-  .hint-text {
-    font-size: 28rpx;
-    color: #888;
-    line-height: 1.6;
-    text-align: center;
-  }
-  
-  /* 主按钮 */
-  .action-section {
-    margin-top: 60rpx;
-  }
-  
-  /* 底部 */
-  .footer-section {
-    margin-top: 120rpx;
-    text-align: center;
-  }
-  
-  .footer-item {
+  .stat-number {
+    font-weight: bold;
+    font-family: "Helvetica Neue", "黑体", "Arial";
+    color: #000000;
+    font-size: 34rpx;
+  } 
+
+  .role {
     font-size: 28rpx;
     color: #0052d9;
-    margin-bottom: 20rpx;
   }
   
-  .version-info {
-    font-size: 24rpx;
-    color: #aaa;
+  /* 按钮样式 */
+  .primary-btn,
+  .logout-btn,
+  
+  .blue-btn {
+    margin-top: 30rpx;
+    border-radius: 25rpx; /* 适当增大圆角 */
+    font-size: 36rpx;    /* 增大字体 */
+    font-weight: bold;
+    background-color: #0052d9; /* 补充背景色（蓝色） */
+    color: white;        /* 补充文字颜色（白色） */
+    height: 90rpx;      /* 固定高度 */
+    line-height: 90rpx; /* 文字垂直居中 */
+    padding: 0 60rpx;    /* 左右内边距，增加宽度 */
+    min-width: 300rpx;   /* 最小宽度，避免过窄 */
+    text-align: center;  /* 文字水平居中 */
+    box-shadow: 0 4rpx 12rpx rgba(0, 82, 217, 0.3); /* 可选：添加阴影增强立体感 */
   }
   
+
+  .primary-btn {
+    background: #0052d9;
+    color: #fff;
+  }
+  
+  .logout-btn {
+    background: #e6f0ff;
+    color: #0052d9;
+  }
+  
+  .info-box {
+    margin-top: 20rpx;
+    background: #f5faff;
+    padding: 30rpx;
+    border-radius: 20rpx;
+    color: #003a8c;
+    display: flex;
+    flex-direction: column;
+    gap: 20rpx;
+  }

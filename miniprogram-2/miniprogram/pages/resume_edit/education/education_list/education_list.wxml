@@ -1,0 +1,11 @@
+<view class="container">
+
+<view wx:for="{{educationList}}" wx:key="eduId" class="card"
+      bindtap="editEducation" data-id="{{item.eduId}}">
+  <view class="degree">{{item.degree}}</view>
+  <view class="school">{{item.school}} - {{item.major}}</view>
+  <view class="time">{{item.startDate}} - {{item.endDate}}</view>
+</view>
+
+<button class="add-btn" bindtap="addEducation">＋ 添加教育经历</button>
+</view>

@@ -1,0 +1,24 @@
+<view class="container">
+
+<view class="form-card">
+
+  <text class="label">资格证书名称</text>
+  <input placeholder="请填写资格证书名称"
+         value="{{formData.certName}}"
+         data-field="certName"
+         bindinput="handleInput"/>
+
+  <text class="label">获得时间</text>
+  <picker mode="date" fields="month"
+          value="{{formData.obtainDate}}"
+          data-field="obtainDate"
+          bindchange="handleDateChange">
+    <view class="picker">{{formData.obtainDate || '请选择获得年月'}}</view>
+  </picker>
+
+</view>
+
+<button class="save-btn" bindtap="saveCertificate">保存</button>
+<button wx:if="{{mode==='edit'}}" class="delete-btn" bindtap="deleteCertificate">删除</button>
+
+</view>

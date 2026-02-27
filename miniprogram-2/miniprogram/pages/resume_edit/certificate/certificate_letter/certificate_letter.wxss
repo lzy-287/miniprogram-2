@@ -1,0 +1,7 @@
+.container { padding: 24rpx; background: #f4f8ff; }
+.form-card { background: #fff; border-radius: 20rpx; padding: 28rpx; box-shadow:0 6rpx 20rpx rgba(0,80,255,0.05); }
+.label { font-size:26rpx; color:#1f3c88; margin-top:20rpx; display:block; }
+input { background:#f7f9ff; border-radius:12rpx; padding:18rpx; margin-top:8rpx; font-size:26rpx; }
+.picker { padding:14rpx; background:#f7f9ff; border-radius:12rpx; margin-top:8rpx; }
+.save-btn { margin-top:40rpx; background:#4a6cf7; color:#fff; border-radius:20rpx; }
+.delete-btn { margin-top:20rpx; background:#fff; color:#ff4d4f; border:1rpx solid #ff4d4f; border-radius:20rpx; }

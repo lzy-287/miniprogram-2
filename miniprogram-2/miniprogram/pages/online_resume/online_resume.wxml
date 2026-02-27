@@ -1,0 +1,108 @@
+<scroll-view class="container" scroll-y="true" style="height:100vh; padding-bottom:100rpx;">
+
+<!-- 默认设置卡片 -->
+<view class="card default-card">
+  <view wx:if="{{isDefault}}">
+    <text class="default-text">当前为默认投递简历</text>
+  </view>
+
+  <button 
+    wx:if="{{!isDefault}}" 
+    size="mini" 
+    type="primary" 
+    bindtap="setDefaultResume">
+    设为默认简历
+  </button>
+</view>
+
+<!-- 基本信息 -->
+<view class="card" bindtap="goBasicInfo">
+  <view class="card-header">
+    <text class="title">基本信息</text>
+    <text class="edit-icon">✏️</text>
+  </view>
+  <view class="card-content">
+    <text class="main-text">{{resume.basicInfo.name || '未填写姓名'}}</text>
+    <text class="sub-text">{{resume.basicInfo.phone || ''}}</text>
+  </view>
+</view>
+
+<!-- 求职状态 -->
+<view class="card" bindtap="goJobStatus">
+  <view class="card-header">
+    <text class="title">求职状态</text>
+    <text class="edit-icon">✏️</text>
+  </view>
+  <view class="card-content">
+    <text>{{resume.jobStatus || '未填写求职状态'}}</text>
+  </view>
+</view>
+
+<!-- 个人优势 -->
+<view class="card" bindtap="goAdvantage">
+  <view class="card-header">
+    <text class="title">个人优势</text>
+    <text class="edit-icon">✏️</text>
+  </view>
+  <view class="card-content">
+    <text class="desc">{{resume.advantage || '点击填写个人优势'}}</text>
+  </view>
+</view>
+
+<!-- 求职期望 -->
+<view class="card" bindtap="goExpectation">
+  <view class="card-header">
+    <text class="title">求职期望</text>
+    <text class="edit-icon">✏️</text>
+  </view>
+  <view class="card-content">
+    <text>{{resume.expectation.jobTitle || '未填写岗位'}}</text>
+    <text class="sub-text">{{resume.expectation.location || ''}}</text>
+  </view>
+</view>
+
+<!-- 工作经历 -->
+<view class="card" bindtap="goExperience">
+  <view class="card-header">
+    <text class="title">工作/实习经历</text>
+    <text class="add-icon">＋</text>
+  </view>
+  <view class="card-content">
+    <text>{{resume.experience.length || 0}} 条经历</text>
+  </view>
+</view>
+
+<!-- 项目经历 -->
+<view class="card" bindtap="goProject">
+  <view class="card-header">
+    <text class="title">项目经历</text>
+    <text class="add-icon">＋</text>
+  </view>
+  <view class="card-content">
+    <text>{{resume.project.length || 0}} 个项目</text>
+  </view>
+</view>
+
+<!-- 教育经历 -->
+<view class="card" bindtap="goEducation">
+  <view class="card-header">
+    <text class="title">教育经历</text>
+    <text class="add-icon">＋</text>
+  </view>
+  <view class="card-content">
+    <text>{{resume.education.length || 0}} 条教育经历</text>
+  </view>
+</view>
+
+  <!-- 资格证书 -->
+  <view class="card" bindtap="goCertificate">
+    <view class="card-header">
+      <text class="title">资格证书</text>
+      <text class="add-icon">＋</text>
+    </view>
+    <view class="card-content">
+      <text>{{resume.certificate.length || 0}} 个证书</text>
+    </view>
+  </view>
+
+</scroll-view>

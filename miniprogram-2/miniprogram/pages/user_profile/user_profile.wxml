@@ -1,42 +1,70 @@
-<!-- pages/user_profile/user_profile.wxml -->
 <view class="container">
 
-<!-- 用户信息卡片 -->
-<view class="user-card">
-  <view class="avatar-container">
-    <t-avatar
-      size="large"
-      icon="user"
-      image="{{userInfo.avatarUrl || ''}}"
-    />
-  </view>
-
-  <view class="user-info">
-    <view class="username">未登录</view>
-    <view class="role-tag">
-      <t-tag theme="primary" variant="light" size="small">游客</t-tag>
+<!-- 未登录 -->
+<view wx:if="{{!isLoggedIn}}" class="login-card">
+  <view class="header">
+    <image src="{{defaultAvatar}}" class="avatar"/>
+    <view class="info">
+      <text class="name">未登录</text>
+      <text class="role">游客</text>
     </view>
   </view>
+  <button class="primary-btn" bindtap="goLogin">立即登录</button>
 </view>
 
-<!-- 引导说明 -->
-<view class="hint-section">
-  <text class="hint-text">
-    登录后可根据身份使用学生、校友或教师的专属功能
-  </text>
-</view>
+<!-- 已登录 -->
+<view wx:if="{{isLoggedIn}}" class="profile-card">
+  <view class="header">
+    <image src="{{userInfo.avatar || defaultAvatar}}" class="avatar"/>
+    <view class="info">
+      <text class="name">{{userInfo.name}}</text>
+      <text class="role">{{userType}}</text>
+    </view>
+  </view>
 
-<!-- 主操作按钮 -->
-<view class="action-section">
-  <t-button theme="primary" size="large" block bindtap="onLoginTap">
-    登录 / 注册
-  </t-button>
-</view>
+  <!-- student -->
+  <view wx:if="{{userType==='student'}}" class="info-box">
+    <view class="stat">
+        <text>待审核申请：</text>
+        <text class="stat-number">{{pendingCount}}</text>
+    </view>
+    <view class="stat">
+        <text>已通过申请：</text>
+        <text class="stat-number">{{approvedCount}}</text>
+    </view>
+    <button class="blue-btn" bindtap="goResumeOnline">在线简历</button>
+    <button class="blue-btn" bindtap="goResumeUpload">附件简历</button>
+    <button class="blue-btn" bindtap="goResumeAI">AI简历优化</button>
+  </view>
 
-<!-- 辅助信息 -->
-<view class="footer-section">
-  <view class="footer-item" bindtap="onNavigateToAbout">关于我们</view>
-  <view class="version-info">版本号 1.0.0</view>
-</view>
+  <!-- alumni -->
+  <view wx:if="{{userType==='alumni'}}" class="info-box">
+    <view class="stat">
+        <text>已发布岗位：</text>
+        <text class="stat-number">{{postCount}}</text>
+    </view>
+    <view class="stat">
+        <text>内推成功人数：</text>
+        <text class="stat-number">{{successCount}}</text>
+    </view>
+  </view>
 
+  <!-- teacher -->
+  <view wx:if="{{userType==='teacher'}}" class="info-box">
+    <view class="stat">
+        <text>待审核简历：</text>
+        <text class="stat-number">{{teacherPending}}</text>
+    </view>
+    <view class="stat">
+        <text>已审核简历：</text>
+        <text class="stat-number">{{teacherApproved}}</text>
+    </view>
+    <view class="stat">
+        <text>简历通过率：</text>
+        <text class="stat-number">{{passRate}}%</text>
+    </view>
+  </view>
+
+  <button class="logout-btn" bindtap="logout">注销账号</button>
+</view>
 </view>

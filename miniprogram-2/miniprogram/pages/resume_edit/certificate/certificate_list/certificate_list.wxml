@@ -1,0 +1,10 @@
+<view class="container">
+
+<view wx:for="{{certList}}" wx:key="certId" class="card"
+      bindtap="editCertificate" data-id="{{item.certId}}">
+  <view class="cert-name">{{item.certName}}</view>
+  <view class="time">{{item.obtainDate}}</view>
+</view>
+
+<button class="add-btn" bindtap="addCertificate">＋ 添加资格证书</button>
+</view>

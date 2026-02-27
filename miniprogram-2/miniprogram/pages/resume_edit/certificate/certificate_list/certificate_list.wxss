@@ -1,0 +1,19 @@
+.container { padding: 24rpx; background: #f4f8ff; }
+
+.card {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 28rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 6rpx 20rpx rgba(0, 80, 255, 0.05);
+}
+
+.cert-name { font-size: 30rpx; font-weight: 600; color: #1f3c88; }
+.time { font-size: 24rpx; margin-top: 6rpx; color: #999; }
+
+.add-btn {
+  margin-top: 40rpx;
+  background: #4a6cf7;
+  color: #ffffff;
+  border-radius: 20rpx;
+}

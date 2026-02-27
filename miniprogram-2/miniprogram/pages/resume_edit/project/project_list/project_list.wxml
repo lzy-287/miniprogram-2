@@ -1,0 +1,10 @@
+<view class="container">
+
+<view wx:for="{{projectList}}" wx:key="projectId" class="card"
+      bindtap="editProject" data-id="{{item.projectId}}">
+  <view class="title">{{item.projectName}}</view>
+  <view class="time">{{item.startDate}} - {{item.endDate}}</view>
+</view>
+
+<button class="add-btn" bindtap="addProject">＋ 添加项目</button>
+</view>

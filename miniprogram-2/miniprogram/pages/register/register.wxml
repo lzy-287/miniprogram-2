@@ -1,85 +1,70 @@
 <view class="container">
+  <view class="header">
+    <text class="title">注册 {{roleText}} 账号</text>
+  </view>
 
-<!-- 身份提示 -->
-<view class="role-hint">
-  当前注册身份：
-  <text class="role">{{ roleText }}</text>
-</view>
+  <view class="card">
+    <view class="form-item">
+      <text class="label">姓名</text>
+      <input
+        class="input"
+        placeholder="请输入真实姓名"
+        value="{{form.name}}"
+        data-field="name"
+        bindinput="onInputChange"
+      />
+    </view>
 
-<!-- 头像 -->
-<view class="avatar-section" bindtap="onChooseAvatar">
-  <image
-    class="avatar"
-    src="{{ form.avatarUrl || defaultAvatar }}"
-    mode="aspectFill"
-  />
-  <view class="avatar-mask">点击设置头像</view>
-</view>
+    <view class="form-item">
+      <text class="label">性别</text>
+      <radio-group bindchange="onGenderChange" class="gender-group">
+        <label class="radio">
+          <radio value="male" checked="{{form.gender==='male'}}" />
+          男
+        </label>
+        <label class="radio">
+          <radio value="female" checked="{{form.gender==='female'}}" />
+          女
+        </label>
+      </radio-group>
+    </view>
+  </view>
 
-<!-- 通用信息 -->
-<view class="form-card">
-  <t-input
-    label="姓名"
-    placeholder="请输入真实姓名"
-    value="{{form.name}}"
-    data-field="name"
-    bind:change="onInputChange"
-  />
-</view>
+  <!-- 学生 -->
+  <view wx:if="{{role==='student'}}" class="card">
+    <view class="form-item">
+      <text class="label">学校</text>
+      <input class="input" data-field="school" bindinput="onInputChange"/>
+    </view>
+    <view class="form-item">
+      <text class="label">专业</text>
+      <input class="input" data-field="major" bindinput="onInputChange"/>
+    </view>
+  </view>
 
-<!-- 学生 -->
-<view wx:if="{{role === 'student'}}" class="form-card">
-  <t-input
-    label="学校"
-    value="{{form.school}}"
-    data-field="school"
-    bind:change="onInputChange"
-  />
-  <t-input
-    label="专业"
-    value="{{form.major}}"
-    data-field="major"
-    bind:change="onInputChange"
-  />
-</view>
+  <!-- 校友 -->
+  <view wx:if="{{role==='alumni'}}" class="card">
+    <view class="form-item">
+      <text class="label">毕业院校</text>
+      <input class="input" data-field="school" bindinput="onInputChange"/>
+    </view>
+    <view class="form-item">
+      <text class="label">公司</text>
+      <input class="input" data-field="company" bindinput="onInputChange"/>
+    </view>
+  </view>
 
-<!-- 校友 -->
-<view wx:if="{{role === 'alumni'}}" class="form-card">
-  <t-input
-    label="毕业院校"
-    value="{{form.school}}"
-    data-field="school"
-    bind:change="onInputChange"
-  />
-  <t-input
-    label="就职公司"
-    value="{{form.company}}"
-    data-field="company"
-    bind:change="onInputChange"
-  />
-</view>
+  <!-- 老师 -->
+  <view wx:if="{{role==='teacher'}}" class="card">
+    <view class="form-item">
+      <text class="label">学校</text>
+      <input class="input" data-field="school" bindinput="onInputChange"/>
+    </view>
+    <view class="form-item">
+      <text class="label">职称</text>
+      <input class="input" data-field="title" bindinput="onInputChange"/>
+    </view>
+  </view>
 
-<!-- 老师 -->
-<view wx:if="{{role === 'teacher'}}" class="form-card">
-  <t-input
-    label="学校"
-    value="{{form.school}}"
-    data-field="school"
-    bind:change="onInputChange"
-  />
-  <t-input
-    label="职称"
-    value="{{form.title}}"
-    data-field="title"
-    bind:change="onInputChange"
-  />
-</view>
-
-<!-- 提交 -->
-<view class="submit-section">
-  <t-button theme="primary" block bindtap="onSubmit">
-    完成注册
-  </t-button>
-</view>
-
+  <button class="submit-btn" bindtap="onSubmit">完成注册</button>
 </view>

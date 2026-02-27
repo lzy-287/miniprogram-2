@@ -14,9 +14,11 @@ exports.main = async (event, context) => {
   // 未注册
   if (res.data.length === 0) {
     return {
-      isRegistered: false
+      isRegistered: false,
+      openid  // ⚠️ 返回 openid
     };
   }
+
 
   const user = res.data[0];
 
@@ -24,13 +26,16 @@ exports.main = async (event, context) => {
   if (user.role !== role) {
     return {
       isRegistered: true,
-      error: '身份不匹配'
+      error: '身份不匹配',
+      openid  // ⚠️ 返回 openid
     };
   }
+
 
   // 已注册
   return {
     isRegistered: true,
-    userInfo: user
+    userInfo: user,
+    openid  // ⚠️ 返回 openid
   };
 };

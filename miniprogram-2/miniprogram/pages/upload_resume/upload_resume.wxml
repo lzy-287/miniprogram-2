@@ -1,0 +1,52 @@
+<view class="container">
+
+<view class="header">
+  <text class="title">选择上传方式</text>
+  <text class="desc">
+    请上传DOC、DOCX、PDF格式的中文简历，大小不超过20M
+  </text>
+</view>
+
+<!-- 未上传 -->
+<view wx:if="{{!fileInfo}}" class="upload-card" bindtap="chooseFile">
+  <text class="upload-text">点击上传附件简历</text>
+</view>
+
+<!-- 已上传 -->
+<view wx:if="{{fileInfo}}" class="file-card">
+
+  <view class="file-info">
+    <text class="file-name">{{fileInfo.fileName}}</text>
+    <text class="file-size">{{fileSizeMB}} MB</text>
+  </view>
+
+  <view class="button-group">
+
+    <!-- <button size="mini" bindtap="chooseFile">
+      重新上传
+    </button> -->
+
+    <button 
+      wx:if="{{!isDefault}}" 
+      size="mini" 
+      type="primary"
+      bindtap="setDefaultResume">
+      设为默认
+    </button>
+
+    <text wx:if="{{isDefault}}" class="default-text">
+      当前默认简历
+    </text>
+
+    <button 
+      size="mini" 
+      type="warn"
+      bindtap="deleteResume">
+      删除
+    </button>
+
+  </view>
+
+</view>
+
+</view>

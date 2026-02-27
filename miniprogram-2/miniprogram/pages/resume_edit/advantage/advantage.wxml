@@ -1,0 +1,27 @@
+<scroll-view class="container" scroll-y="true" style="height:100vh; padding-bottom:120rpx;">
+
+<view class="section-title">个人优势</view>
+
+<view class="card">
+
+  <textarea
+    class="textarea"
+    placeholder="请简要描述你的核心优势、专业能力、项目亮点或性格特质（500字以内）"
+    maxlength="{{maxLength}}"
+    value="{{content}}"
+    bindinput="onInput"
+    auto-height="false"
+  />
+
+  <view class="counter">
+    <text>{{currentLength}}</text>
+    <text>/{{maxLength}}</text>
+  </view>
+
+</view>
+
+<button class="save-btn" bindtap="save">
+  保存
+</button>
+
+</scroll-view>

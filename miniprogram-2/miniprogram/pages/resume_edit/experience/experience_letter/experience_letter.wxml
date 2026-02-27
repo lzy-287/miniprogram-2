@@ -1,0 +1,47 @@
+<view class="container">
+
+<view class="form-card">
+  <text class="label">职位名称</text>
+  <input placeholder="请填写职位名称"
+         value="{{formData.jobTitle}}"
+         data-field="jobTitle"
+         bindinput="handleInput"/>
+
+  <text class="label">公司名称</text>
+  <input placeholder="请填写公司名称"
+         value="{{formData.company}}"
+         data-field="company"
+         bindinput="handleInput"/>
+
+  <text class="label">在职时间</text>
+  <view class="time-row">
+    <picker mode="date" fields="month"
+            value="{{formData.startDate}}"
+            data-field="startDate"
+            bindchange="handleDateChange">
+      <view class="picker">{{formData.startDate || '请选择开始年月'}}</view>
+    </picker>
+
+    <text class="dash">-</text>
+
+    <picker mode="date" fields="month"
+            value="{{formData.endDate}}"
+            data-field="endDate"
+            bindchange="handleDateChange">
+      <view class="picker">{{formData.endDate || '请选择结束年月'}}</view>
+    </picker>
+  </view>
+
+  <text class="label">工作内容</text>
+  <textarea placeholder="请描述你在该公司的主要工作内容以及..."
+            value="{{formData.workContent}}"
+            data-field="workContent"
+            bindinput="handleInput"/>
+
+</view>
+
+<button class="save-btn" bindtap="saveExperience">保存</button>
+
+<button wx:if="{{mode==='edit'}}" class="delete-btn" bindtap="deleteExperience">删除</button>
+
+</view>

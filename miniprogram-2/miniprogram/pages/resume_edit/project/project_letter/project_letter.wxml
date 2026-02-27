@@ -1,0 +1,38 @@
+<view class="container">
+
+<view class="form-card">
+
+  <text class="label">项目名称</text>
+  <input placeholder="请填写项目名称"
+         value="{{formData.projectName}}"
+         data-field="projectName"
+         bindinput="handleInput"/>
+
+  <text class="label">项目时间</text>
+  <view class="time-row">
+    <picker mode="date" fields="month"
+            value="{{formData.startDate}}"
+            data-field="startDate"
+            bindchange="handleDateChange">
+      <view class="picker">{{formData.startDate || '请选择开始年月'}}</view>
+    </picker>
+    <text class="dash">-</text>
+    <picker mode="date" fields="month"
+            value="{{formData.endDate}}"
+            data-field="endDate"
+            bindchange="handleDateChange">
+      <view class="picker">{{formData.endDate || '请选择结束年月'}}</view>
+    </picker>
+  </view>
+
+  <text class="label">项目内容</text>
+  <textarea placeholder="请描述你在该项目中的主要工作及职责..."
+            value="{{formData.projectContent}}"
+            data-field="projectContent"
+            bindinput="handleInput"/>
+</view>
+
+<button class="save-btn" bindtap="saveProject">保存</button>
+<button wx:if="{{mode==='edit'}}" class="delete-btn" bindtap="deleteProject">删除</button>
+
+</view>

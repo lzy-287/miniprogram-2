@@ -1,0 +1,50 @@
+page {
+    background: #f4f8ff;
+  }
+  
+  .container {
+    padding: 24rpx;
+    box-sizing: border-box;
+  }
+  
+  .section-title {
+    font-size: 32rpx;
+    font-weight: 600;
+    margin-bottom: 30rpx;
+    color: #1f3c88;
+  }
+  
+  .card {
+    background: #ffffff;
+    padding: 24rpx;
+    border-radius: 20rpx;
+    box-shadow: 0 6rpx 20rpx rgba(0, 80, 255, 0.05);
+  }
+  
+  /* ⭐ 关键修改 */
+  .textarea {
+    width: 100%;
+    height: 350rpx;          /* 固定高度 */
+    font-size: 26rpx;
+    line-height: 1.6;
+    overflow-y: scroll;      /* 允许内部滚动 */
+    padding: 10rpx 0;
+    box-sizing: border-box;
+  }
+  
+  .counter {
+    text-align: right;
+    font-size: 24rpx;
+    color: #888;
+    margin-top: 12rpx;
+  }
+  
+  .save-btn {
+    width: 100%;
+    height: 80rpx;
+    margin-top: 60rpx;
+    background: #4a6cf7;
+    color: #ffffff;
+    font-size: 28rpx;
+    border-radius: 40rpx;
+  }

@@ -1,0 +1,10 @@
+<view class="container">
+  <view wx:for="{{experienceList}}" wx:key="expId" class="card"
+        bindtap="editExperience" data-id="{{item.expId}}">
+    <view class="title">{{item.jobTitle}}</view>
+    <view class="company">{{item.company}}</view>
+    <view class="time">{{item.startDate}} - {{item.endDate}}</view>
+  </view>
+
+  <button class="add-btn" bindtap="addExperience">＋ 添加经历</button>
+</view>

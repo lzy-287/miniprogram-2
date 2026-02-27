@@ -1,0 +1,45 @@
+<view class="container">
+
+<view class="form-card">
+
+  <text class="label">学历</text>
+  <input placeholder="请填写学历"
+         value="{{formData.degree}}"
+         data-field="degree"
+         bindinput="handleInput"/>
+
+  <text class="label">学校名称</text>
+  <input placeholder="请填写学校名称"
+         value="{{formData.school}}"
+         data-field="school"
+         bindinput="handleInput"/>
+
+  <text class="label">所学专业</text>
+  <input placeholder="请填写所学专业"
+         value="{{formData.major}}"
+         data-field="major"
+         bindinput="handleInput"/>
+
+  <text class="label">在校时间</text>
+  <view class="time-row">
+    <picker mode="date" fields="month"
+            value="{{formData.startDate}}"
+            data-field="startDate"
+            bindchange="handleDateChange">
+      <view class="picker">{{formData.startDate || '请选择入学时间'}}</view>
+    </picker>
+    <text class="dash">-</text>
+    <picker mode="date" fields="month"
+            value="{{formData.endDate}}"
+            data-field="endDate"
+            bindchange="handleDateChange">
+      <view class="picker">{{formData.endDate || '请选择毕业时间'}}</view>
+    </picker>
+  </view>
+
+</view>
+
+<button class="save-btn" bindtap="saveEducation">保存</button>
+<button wx:if="{{mode==='edit'}}" class="delete-btn" bindtap="deleteEducation">删除</button>
+
+</view>

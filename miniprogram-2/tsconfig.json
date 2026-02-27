@@ -25,7 +25,7 @@
   },
   "include": [
     "./miniprogram/**/*.ts"
-, "miniprogram/pages/register/register.js", "miniprogram/pages/profile/teacher_profile/teacher_profile.js", "miniprogram/pages/profile/alumni_profile/alumni_profile.js"  ],
+, "miniprogram/pages/register/register.js", "miniprogram/pages/profile/teacher_profile/teacher_profile.js", "miniprogram/pages/profile/alumni_profile/alumni_profile.js", "miniprogram/pages/online_resume/online_resume.js", "miniprogram/pages/resume_edit/basic_info/basic_info.js", "miniprogram/pages/resume_edit/job_status/job_status.js", "miniprogram/pages/resume_edit/advantage/advantage.js", "miniprogram/pages/resume_edit/expectation/location_select/city_select.js", "miniprogram/pages/resume_edit/expectation/jobTitle_select/position_select.js", "miniprogram/pages/resume_edit/expectation/expectation_letter/expectation.js", "miniprogram/pages/resume_edit/experience/experience.js", "miniprogram/pages/resume_edit/experience/experience_letter/experience_letter.js", "miniprogram/pages/resume_edit/experience/experience_list/experience_list.js", "miniprogram/pages/resume_edit/project/project_list/project_list.js", "miniprogram/pages/resume_edit/project/project_letter/project_letter.js", "miniprogram/pages/resume_edit/education/education_list/education_list.js", "miniprogram/pages/resume_edit/education/education_letter/education_letter.js", "miniprogram/pages/resume_edit/education/education_list/education_list.js", "miniprogram/pages/resume_edit/certificate/certificate_letter/certificate_letter.js", "miniprogram/pages/resume_edit/certificate/certificate_list/certificate_list.js", "miniprogram/pages/upload_resume/upload_resume.js"  ],
   "exclude": [
     "node_modules"
   ],

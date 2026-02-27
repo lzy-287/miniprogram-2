@@ -1,0 +1,71 @@
+page {
+    background: #f4f8ff;
+  }
+  
+  .container {
+    padding: 40rpx;
+  }
+  
+  .header {
+    margin-bottom: 60rpx;
+  }
+  
+  .title {
+    font-size: 46rpx;
+    font-weight: bold;
+    color: #1f3c88;
+  }
+  
+  .desc {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    color: #666;
+    line-height: 40rpx;
+  }
+  
+  .upload-card {
+    height: 260rpx;
+    background: #ffffff;
+    border-radius: 24rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10rpx 30rpx rgba(0, 80, 255, 0.05);
+  }
+  
+  .upload-text {
+    color: #4a6cf7;
+    font-size: 30rpx;
+  }
+  
+  .file-card {
+    background: #ffffff;
+    padding: 40rpx;
+    border-radius: 24rpx;
+    box-shadow: 0 10rpx 30rpx rgba(0, 80, 255, 0.05);
+  }
+  
+  .file-name {
+    font-size: 30rpx;
+    font-weight: 600;
+    color: #1f3c88;
+  }
+  
+  .file-size {
+    display: block;
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #888;
+  }
+  
+  .button-group {
+    margin-top: 30rpx;
+    display: flex;
+    gap: 20rpx;
+    align-items: center;
+  }
+  
+  .default-text {
+    color: #4a6cf7;
+    font-weight: 600;
+  }

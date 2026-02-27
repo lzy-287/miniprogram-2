@@ -2,11 +2,9 @@ Page({
     data: {
       role: '',
       roleText: '',
-      defaultAvatar: '/assets/default_avatar.png',
       form: {
         name: '',
-        avatarFileID: '',
-        avatarUrl: '',
+        gender: 'male',
         school: '',
         major: '',
         company: '',
@@ -31,44 +29,17 @@ Page({
       });
     },
   
-    /** ✅ 原生小程序写法 */
     onInputChange(e) {
       const field = e.currentTarget.dataset.field;
       const value = e.detail.value;
-  
       this.setData({
         [`form.${field}`]: value
       });
     },
   
-    /** 选择并上传头像 */
-    onChooseAvatar() {
-      wx.chooseImage({
-        count: 1,
-        sizeType: ['compressed'],
-        sourceType: ['album', 'camera'],
-        success: res => {
-          const filePath = res.tempFilePaths[0];
-          const cloudPath = `avatar/${Date.now()}-${Math.random()}.jpg`;
-  
-          wx.showLoading({ title: '上传中' });
-  
-          wx.cloud.uploadFile({
-            cloudPath,
-            filePath,
-            success: uploadRes => {
-              wx.hideLoading();
-              this.setData({
-                'form.avatarFileID': uploadRes.fileID,
-                'form.avatarUrl': filePath
-              });
-            },
-            fail: () => {
-              wx.hideLoading();
-              wx.showToast({ title: '上传失败', icon: 'error' });
-            }
-          });
-        }
+    onGenderChange(e) {
+      this.setData({
+        'form.gender': e.detail.value
       });
     },
   
@@ -76,7 +47,7 @@ Page({
       const { form, role } = this.data;
   
       if (!form.name) {
-        wx.showToast({ title: '请填写姓名', icon: 'none' });
+        wx.showToast({ title: '请输入姓名', icon: 'none' });
         return;
       }
   
@@ -96,12 +67,8 @@ Page({
           wx.setStorageSync('userInfo', res.result.userInfo);
           wx.setStorageSync('userType', role);
   
-          wx.redirectTo({
-            url: {
-              student: '/pages/profile/student_profile/student_profile',
-              alumni: '/pages/profile/alumni_profile/alumni_profile',
-              teacher: '/pages/profile/teacher_profile/teacher_profile'
-            }[role]
+          wx.switchTab({
+            url: '/pages/user_profile/user_profile'
           });
         }
       });

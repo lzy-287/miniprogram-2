@@ -1,0 +1,42 @@
+.container {
+    padding: 30rpx;
+    background: #f5f8ff;
+    min-height: 100vh;
+  }
+  
+  .title {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin-bottom: 30rpx;
+    color: #1a3d8f;
+  }
+  
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20rpx;
+  }
+  
+  .item {
+    padding: 18rpx 30rpx;
+    border-radius: 40rpx;
+    border: 2rpx solid #cfd8ff;
+    background: #ffffff;
+    color: #333;
+  }
+  
+  .active {
+    background: #2f6bff;
+    color: #fff;
+    border: 2rpx solid #2f6bff;
+  }
+  
+  .btn {
+    margin-top: 60rpx;
+    background: #2f6bff;
+    color: #fff;
+    text-align: center;
+    padding: 22rpx;
+    border-radius: 50rpx;
+    font-size: 30rpx;
+  }

@@ -1,0 +1,21 @@
+<view class="container">
+
+<view class="title">选择工作城市（可多选）</view>
+
+<view class="list">
+  <block wx:for="{{cityList}}" wx:key="name">
+    <view 
+      class="item {{item.checked ? 'active' : ''}}"
+      bindtap="toggleSelect"
+      data-index="{{index}}"
+    >
+      {{item.name}}
+    </view>
+  </block>
+</view>
+
+<view class="btn" bindtap="confirmSelect">
+  确定
+</view>
+
+</view>

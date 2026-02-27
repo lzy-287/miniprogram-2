@@ -1,0 +1,21 @@
+<scroll-view class="container" scroll-y="true" style="height:100vh; padding-bottom:120rpx;">
+
+<view class="section-title">求职状态</view>
+
+<view class="card">
+  <block wx:for="{{statusList}}" wx:key="value">
+    <view 
+      class="option {{selected == item.value ? 'active' : ''}}"
+      bindtap="selectStatus"
+      data-value="{{item.value}}"
+    >
+      <text>{{item.label}}</text>
+    </view>
+  </block>
+</view>
+
+<button class="save-btn" bindtap="save">
+  保存
+</button>
+
+</scroll-view>

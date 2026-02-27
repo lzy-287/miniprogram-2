@@ -1,0 +1,30 @@
+<scroll-view class="container" scroll-y="true" style="height:100vh; padding-bottom:120rpx;">
+
+<view class="form-item" bindtap="goPosition">
+  <text class="label">期望职位</text>
+  <view class="value">
+    {{form.jobTitle || '请选择期望职位'}}
+  </view>
+</view>
+
+<view class="form-item" bindtap="goCity">
+  <text class="label">工作城市</text>
+  <view class="value">
+    {{form.location || '请选择工作城市'}}
+  </view>
+</view>
+
+<view class="form-item">
+  <text class="label">薪资要求</text>
+  <input 
+    placeholder="如 15k-20k"
+    value="{{form.salary}}"
+    bindinput="onSalaryInput"
+  />
+</view>
+
+<button class="save-btn" bindtap="save">
+  保存
+</button>
+
+</scroll-view>
